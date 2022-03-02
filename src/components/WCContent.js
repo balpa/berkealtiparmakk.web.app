@@ -216,7 +216,7 @@ function WCContent({isDark, isLoggedIn, isAtWC}) {
             (styles,item)=> item && <animated.div style={styles}>
         <div className="wcContent" style={isDark ? {color:"wheat", display:"flex",flexDirection:"column"} : {display:"flex",flexDirection:"column"}}>
             <div id="wc-inside">
-                {isLoggedIn===false ? <span style={{fontSize:"20px"}}>You must be logged in to vote</span> : <VoteComponents />}
+                {isLoggedIn===false ? <span style={{fontSize:"20px",position:'absolute',top:'50%',left:'50%',transform:"translate(-50%,-50%)"}}>You must be logged in to vote</span> : <VoteComponents />}
             </div>
         </div>
         </animated.div>

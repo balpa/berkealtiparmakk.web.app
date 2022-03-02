@@ -1,20 +1,6 @@
-/* @author: Berke Altıparmak
- You may use, distribute and modify this code under the
- terms of the Beerware license, which unfortunately won't be
- written for another century.
- ----------------------------------------------------------------------------
- "THE BEER-WARE LICENSE" (Revision 42):
- <berkealtiparmak@outlook.com> wrote this file.  As long as you retain this notice you
- can do whatever you want with this stuff. If we meet some day, and you think
- this stuff is worth it, you can buy me a beer in return.   Berke Altıparmak
- ----------------------------------------------------------------------------
-*/
-
-
-
-
 import './App.css';
 import React, { useState, useEffect, useCallback } from 'react';
+import { API } from './api';
 // HOOKS *******************
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
@@ -54,8 +40,6 @@ import { light } from '@mui/material/styles/createPalette';
 
 function App() {
   const auth = getAuth();
-
-  const API_KEY = ""
 
   const [position, setPosition] = useState(true)
   const [isDark, setisDark] = useState(false)
@@ -153,9 +137,10 @@ console.log(lightThemeColor)
 
   useEffect(async() => {                  // GET WEATHER
     if (status == true) {
-      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}`)
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API.weather}&q=${lat},${lon}`)
       const data = await response.json()
       setWeatherData(data)
+      console.log(data)
     }
     else {
       console.log("status still false")
@@ -352,7 +337,8 @@ console.log(lightThemeColor)
        {isAtWC ? <WCContent isDark={isDark} isAtWC={isAtWC} isLoggedIn={isLoggedIn}/> : null}
        {isAtContact ? <ContactContent isAtContact={isAtContact} isDark={isDark}/> : null}
        {isAtMedia ? <MediaContent isAtMedia={isAtMedia} isDark={isDark}/> : null}
-
+      
+      <div style={{position:"absolute", bottom:"5%",width:"99vw",textAlign:"center"}}> site under construction</div>
       <div className="footer" style={isDark ? {color: "wheat"} : {}}>
         <Clock isDark={isDark} />
       </div>

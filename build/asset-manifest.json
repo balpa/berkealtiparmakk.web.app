@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/berkealtiparmakk-reactjs/static/css/main.50b562e5.chunk.css",
-    "main.js": "/berkealtiparmakk-reactjs/static/js/main.61c5859e.chunk.js",
-    "main.js.map": "/berkealtiparmakk-reactjs/static/js/main.61c5859e.chunk.js.map",
-    "runtime-main.js": "/berkealtiparmakk-reactjs/static/js/runtime-main.3cfc15a6.js",
-    "runtime-main.js.map": "/berkealtiparmakk-reactjs/static/js/runtime-main.3cfc15a6.js.map",
-    "static/js/2.63a7fe3e.chunk.js": "/berkealtiparmakk-reactjs/static/js/2.63a7fe3e.chunk.js",
-    "static/js/2.63a7fe3e.chunk.js.map": "/berkealtiparmakk-reactjs/static/js/2.63a7fe3e.chunk.js.map",
-    "index.html": "/berkealtiparmakk-reactjs/index.html",
-    "precache-manifest.a586ec13b09d6ca9639a7849a4b14aa3.js": "/berkealtiparmakk-reactjs/precache-manifest.a586ec13b09d6ca9639a7849a4b14aa3.js",
-    "service-worker.js": "/berkealtiparmakk-reactjs/service-worker.js",
-    "static/css/main.50b562e5.chunk.css.map": "/berkealtiparmakk-reactjs/static/css/main.50b562e5.chunk.css.map",
-    "static/js/2.63a7fe3e.chunk.js.LICENSE.txt": "/berkealtiparmakk-reactjs/static/js/2.63a7fe3e.chunk.js.LICENSE.txt",
-    "static/media/CV.pdf": "/berkealtiparmakk-reactjs/static/media/CV.c579636a.pdf"
+    "main.css": "/static/css/main.61a56c15.chunk.css",
+    "main.js": "/static/js/main.c8948713.chunk.js",
+    "main.js.map": "/static/js/main.c8948713.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.34996ad8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.34996ad8.js.map",
+    "static/js/2.010a4923.chunk.js": "/static/js/2.010a4923.chunk.js",
+    "static/js/2.010a4923.chunk.js.map": "/static/js/2.010a4923.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5d840c8b6d538f07468e6e6cb23732f3.js": "/precache-manifest.5d840c8b6d538f07468e6e6cb23732f3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.61a56c15.chunk.css.map": "/static/css/main.61a56c15.chunk.css.map",
+    "static/js/2.010a4923.chunk.js.LICENSE.txt": "/static/js/2.010a4923.chunk.js.LICENSE.txt",
+    "static/media/CV.pdf": "/static/media/CV.c579636a.pdf",
+    "static/media/App.css": "/static/media/chat-bg 2.90854edb.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3cfc15a6.js",
-    "static/js/2.63a7fe3e.chunk.js",
-    "static/css/main.50b562e5.chunk.css",
-    "static/js/main.61c5859e.chunk.js"
+    "static/js/runtime-main.34996ad8.js",
+    "static/js/2.010a4923.chunk.js",
+    "static/css/main.61a56c15.chunk.css",
+    "static/js/main.c8948713.chunk.js"
   ]
 }

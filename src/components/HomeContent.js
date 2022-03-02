@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 import { getAuth } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc, onSnapshot, getDocs, collection } from "firebase/firestore"; 
 import db from '../firebaseDB'
 import { useSpring,useTransition, animated } from 'react-spring';
 import { listItemAvatarClasses } from '@mui/material';
@@ -10,6 +10,8 @@ import Messages from './Messages';
 function HomeContent({isDark, isAtHome}) {
 
     const [message, setMessage] = React.useState('');
+    const [messageArray, setMessageArray] = React.useState([]);
+    const [trigger, setTrigger] = React.useState(0);
 
     const auth = getAuth();
 
@@ -21,6 +23,8 @@ function HomeContent({isDark, isAtHome}) {
     })
 
     const sendMessage = async () => {
+        setTrigger(trigger+1);
+
         let date = new Date();
         let currentuseruid = auth.currentUser.uid;
 
@@ -35,9 +39,23 @@ function HomeContent({isDark, isAtHome}) {
       });}
     }
 
-    React.useEffect(() => {
+ 
 
+    React.useEffect(async () => {
+        const querySnapshot = await getDocs(collection(db, "messages"));
+            querySnapshot.forEach((doc) => {
+             let message = {
+                message: doc.data().message,
+                date: doc.data().date,
+                nickname: doc.data().nickname,
+             }
+            setMessageArray(messageArray => [...messageArray, message]);
+});
     },[])
+
+    console.log(messageArray);
+
+
 
     return (
         transition(
@@ -46,16 +64,15 @@ function HomeContent({isDark, isAtHome}) {
             <div className="home-inside">
                 HELLÖ{auth.currentUser&&auth.displayName!=null ? "," : ""}<br />
                 {auth.currentUser && auth.displayName === null ? "Please set a nick" : ""}
-                {auth.currentUser ? auth.currentUser.displayName : "Please Login"}
+                {auth.currentUser ? auth.currentUser.displayName : "Please Login To See Notes"}
+
+                <div className="home-inside-notes-bg"></div>
                 <div className="home-inside-notes">
-                    <Messages />
-                    <Messages />
-                    <Messages />
-                    <Messages />
-                    <Messages />
+                {messageArray.map((val)=> <Messages obj={val} isDark={isDark}/>)}
+                    
                 </div>
                 <div className='message-input'>
-                    <input id='message' type="text" onChange={e=> setMessage(e.target.value)} maxLength='160' placeholder="Leave a message..."/>
+                    <input id='message' type="text" onChange={e=> setMessage(e.target.value)} maxLength='160' placeholder="Leave a note..."/>
                     <button className='send-message-button' onClick={()=> sendMessage()}>Send</button>
                 </div>
             </div>
