@@ -3,7 +3,7 @@
   <a href="http://berkealtiparmakk.web.app" target="_blank">berkealtiparmakk.web.app</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+  <img alt="Demo" src="./Images/Screenshot 2022-04-01 at 17.03.57.png" />
 </div>
 
 <br/>
